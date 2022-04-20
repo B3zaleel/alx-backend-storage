@@ -34,7 +34,7 @@ This project contains tasks for learning advanced MySQL features.
   + You should use attributes `formed` and `split` for computing the `lifespan`.
   + Your script can be executed on any database.
 
-+ [ ] 4. **Buy buy buy**<br/>[4-store.sql](4-store.sql) contains a SQL script that creates a trigger that decreases the quantity of an item after adding a new order:
++ [x] 4. **Buy buy buy**<br/>[4-store.sql](4-store.sql) contains a SQL script that creates a trigger that decreases the quantity of an item after adding a new order:
   + Quantity in the table `items` can be negative.
   + A dump of the database and relevant table(s) is shown below:
     ```sql
