@@ -193,7 +193,7 @@ This project contains tasks for learning advanced MySQL features.
   + Import this archived table dump: [names.7z](https://mega.nz/file/OVhTySJQ#ezfbZ1GT-06qQKl0yYz2yY3Gdlr8Vd3PTyBCixIc9d4).
   + Only the first letter of `name` AND `score` must be indexed.
 
-+ [ ] 10. **Safe divide**<br/>[10-div.sql](10-div.sql) contains a SQL script that creates a function `SafeDiv` that divides (and returns) the first by the second number or returns 0 if the second number is equal to 0:
++ [x] 10. **Safe divide**<br/>[10-div.sql](10-div.sql) contains a SQL script that creates a function `SafeDiv` that divides (and returns) the first by the second number or returns 0 if the second number is equal to 0:
   + The function `SafeDiv` takes 2 arguments:
     + `a`, INT.
     + `b`, INT.
