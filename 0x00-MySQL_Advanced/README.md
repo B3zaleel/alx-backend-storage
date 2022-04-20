@@ -28,7 +28,7 @@ This project contains tasks for learning advanced MySQL features.
   + Your script can be executed on any database.
   + Context: Context: Calculating/computing something is always power intensive… better to distribute the load!
 
-+ [ ] 3. **Old school band**<br/>[3-metal_bands.sql](3-metal_bands.sql) contains a SQL script that lists all bands with `Glam rock` as their main style, ranked by their longevity:
++ [x] 3. **Old school band**<br/>[3-metal_bands.sql](3-metal_bands.sql) contains a SQL script that lists all bands with `Glam rock` as their main style, ranked by their longevity:
   + Import this table dump: [metal_bands.sql](metal_bands.sql).
   + Column names must be: `band_name` and `lifespan` (in years).
   + You should use attributes `formed` and `split` for computing the `lifespan`.
