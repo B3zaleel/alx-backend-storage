@@ -76,7 +76,7 @@ This project contains tasks for learning advanced MySQL features.
     ```
   + **Context**: Nothing related to MySQL, but perfect for user email validation - distribute the logic to the database itself!
 
-+ [ ] 6. **Add bonus**<br/>[6-bonus.sql](6-bonus.sql) contains a SQL script that creates a stored procedure `AddBonus` that adds a new correction for a student:
++ [x] 6. **Add bonus**<br/>[6-bonus.sql](6-bonus.sql) contains a SQL script that creates a stored procedure `AddBonus` that adds a new correction for a student:
   + The procedure `AddBonus` takes 3 inputs (in this order):
     + `user_id`, a `users.id` value (you can assume `user_id` is linked to an existing `users`).
     + `project_name`, a new or already exists `projects` - if no `projects.name` found in the table, you should create it.
