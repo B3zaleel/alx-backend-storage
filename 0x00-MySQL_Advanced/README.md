@@ -13,7 +13,7 @@ This project contains tasks for learning advanced MySQL features.
   + Your script can be executed on any database.
   + **Context**: Make an attribute unique directly in the table schema will enforced your business rules and avoid bugs in your application
 
-+ [ ] 1. **In and not out**<br/>[1-country_users.sql](1-country_users.sql) contains a SQL script that creates a table `users` following these requirements:
++ [x] 1. **In and not out**<br/>[1-country_users.sql](1-country_users.sql) contains a SQL script that creates a table `users` following these requirements:
   + With these attributes:
     + `id`, integer, never null, auto increment and primary key.
     + `email`, string (255 characters), never null and unique.
