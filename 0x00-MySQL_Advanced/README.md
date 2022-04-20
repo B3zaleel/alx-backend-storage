@@ -189,7 +189,7 @@ This project contains tasks for learning advanced MySQL features.
   + Import this archived table dump: [names.7z](https://mega.nz/file/OVhTySJQ#ezfbZ1GT-06qQKl0yYz2yY3Gdlr8Vd3PTyBCixIc9d4).
   + Only the first letter of `name` must be indexed.
 
-+ [ ] 9. **Optimize search and score**<br/>[9-index_name_score.sql](9-index_name_score.sql) contains a SQL script that creates an index `idx_name_first_score` on the table `names` and the first letter of `name` and the `score`:
++ [x] 9. **Optimize search and score**<br/>[9-index_name_score.sql](9-index_name_score.sql) contains a SQL script that creates an index `idx_name_first_score` on the table `names` and the first letter of `name` and the `score`:
   + Import this archived table dump: [names.7z](https://mega.nz/file/OVhTySJQ#ezfbZ1GT-06qQKl0yYz2yY3Gdlr8Vd3PTyBCixIc9d4).
   + Only the first letter of `name` AND `score` must be indexed.
 
