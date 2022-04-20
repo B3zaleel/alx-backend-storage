@@ -56,7 +56,7 @@ This project contains tasks for learning advanced MySQL features.
     ```
   + **Context**: Updating multiple tables for one action from your application can generate issue: network disconnection, crash, etc… to keep your data in a good shape, let MySQL do it for you!
 
-+ [ ] 5. **Email validation to sent**<br/>[5-sum_list.sql](5-valid_email.sql) contains a SQL script that creates a trigger that resets the attribute `valid_email` only when the `email` has been changed.
++ [x] 5. **Email validation to sent**<br/>[5-sum_list.sql](5-valid_email.sql) contains a SQL script that creates a trigger that resets the attribute `valid_email` only when the `email` has been changed.
   + A dump of the database and relevant table(s) is shown below:
     ```sql
     -- Initial
