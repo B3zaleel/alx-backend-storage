@@ -185,7 +185,7 @@ This project contains tasks for learning advanced MySQL features.
     INSERT INTO corrections (user_id, project_id, score) VALUES (@user_jeanne, @project_py, 73);
     ```
 
-+ [ ] 8. **Optimize simple search**<br/>[8-index_my_names.sql](8-index_my_names.sql) contains a SQL script that creates an index `idx_name_first` on the table `names` and the first letter of `name`:
++ [x] 8. **Optimize simple search**<br/>[8-index_my_names.sql](8-index_my_names.sql) contains a SQL script that creates an index `idx_name_first` on the table `names` and the first letter of `name`:
   + Import this archived table dump: [names.7z](https://mega.nz/file/OVhTySJQ#ezfbZ1GT-06qQKl0yYz2yY3Gdlr8Vd3PTyBCixIc9d4).
   + Only the first letter of `name` must be indexed.
 
