@@ -216,7 +216,7 @@ This project contains tasks for learning advanced MySQL features.
     INSERT INTO numbers (a, b) VALUES (6, 8);
     ```
 
-+ [ ] 11. **No table for a meeting**<br/>[11-need_meeting.sql](11-need_meeting.sql) contains a SQL script that creates a view `need_meeting` that lists all students that have a score under 80 (strict) and no `last_meeting` or more than 1 month.
++ [x] 11. **No table for a meeting**<br/>[11-need_meeting.sql](11-need_meeting.sql) contains a SQL script that creates a view `need_meeting` that lists all students that have a score under 80 (strict) and no `last_meeting` or more than 1 month.
   + The view `need_meeting` should return all students name when:
     + They score are under (strict) to 80.
     + **AND** no `last_meeting` date **OR** more than a month.
