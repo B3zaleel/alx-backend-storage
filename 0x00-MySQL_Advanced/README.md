@@ -131,7 +131,7 @@ This project contains tasks for learning advanced MySQL features.
     INSERT INTO corrections (user_id, project_id, score) VALUES (@user_jeanne, @project_py, 73);
     ```
 
-+ [ ] 7. **Average score**<br/>[7-average_score.sql](7-average_score.sql) contains a SQL script that creates a stored procedure `ComputeAverageScoreForUser` that computes and store the average score for a student.
++ [x] 7. **Average score**<br/>[7-average_score.sql](7-average_score.sql) contains a SQL script that creates a stored procedure `ComputeAverageScoreForUser` that computes and store the average score for a student.
   + **Note**: An average score can be a decimal.
   + The procedure `ComputeAverageScoreForUser` takes 1 input:
     + `user_id`, a `users.id` value (you can assume `user_id` is linked to an existing `users`).
