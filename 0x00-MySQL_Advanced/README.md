@@ -4,7 +4,7 @@ This project contains tasks for learning advanced MySQL features.
 
 ## Tasks To Complete
 
-+ [ ] 0. **We are all unique!**<br/>[0-uniq_users.sql](0-uniq_users.sql) contains a SQL script that creates a table `users` following these requirements:
++ [x] 0. **We are all unique!**<br/>[0-uniq_users.sql](0-uniq_users.sql) contains a SQL script that creates a table `users` following these requirements:
   + With these attributes:
     + `id`, integer, never null, auto increment and primary key.
     + `email`, string (255 characters), never null and unique.
