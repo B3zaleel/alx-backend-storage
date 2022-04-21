@@ -3,13 +3,13 @@
 DROP TRIGGER IF EXISTS validate_email;
 DELIMITER $$
 CREATE TRIGGER validate_email
-AFTER UPDATE ON users
+BEFORE UPDATE ON users
 FOR EACH ROW
 BEGIN
-    IF OLD.email != NEW.email THEN
-        UPDATE users
-            SET users.valid_email = ABS(NEW.valid_email - 1)
-            WHERE users.id = NEW.id;
+    IF IFNULL(OLD.email, "") != IFNULL(NEW.email, "") THEN
+        SET NEW.valid_email = NOT OLD.valid_email;
+    ELSE
+        SET NEW.valid_email = OLD.valid_email;
     END IF;
 END $$
 DELIMITER ;
