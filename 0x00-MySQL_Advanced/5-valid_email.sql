@@ -7,7 +7,7 @@ BEFORE UPDATE ON users
 FOR EACH ROW
 BEGIN
     IF IFNULL(OLD.email, "") != IFNULL(NEW.email, "") THEN
-        SET NEW.valid_email = NOT OLD.valid_email;
+        SET NEW.valid_email = NEW.valid_email;
     ELSE
         SET NEW.valid_email = OLD.valid_email;
     END IF;
