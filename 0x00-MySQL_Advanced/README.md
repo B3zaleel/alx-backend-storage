@@ -293,7 +293,7 @@ This project contains tasks for learning advanced MySQL features.
     INSERT INTO corrections (user_id, project_id, score) VALUES (@user_jeanne, @project_py, 73);
     ```
 
-+ [ ] 13. **Average weighted score for all!**<br/>[101-average_weighted_score.sql](101-average_weighted_score.sql) contains a SQL script that creates a stored procedure `ComputeAverageWeightedScoreForUsers` that computes and store the [average weighted score](https://www.wikihow.com/Calculate-Weighted-Average) for all students:
++ [x] 13. **Average weighted score for all!**<br/>[101-average_weighted_score.sql](101-average_weighted_score.sql) contains a SQL script that creates a stored procedure `ComputeAverageWeightedScoreForUsers` that computes and store the [average weighted score](https://www.wikihow.com/Calculate-Weighted-Average) for all students:
   + The procedure `ComputeAverageWeightedScoreForUsers` takes no input.
   + A dump of the database and relevant table(s) is shown below:
     ```sql
