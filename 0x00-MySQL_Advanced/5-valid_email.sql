@@ -6,6 +6,6 @@ CREATE TRIGGER validate_email
 BEFORE UPDATE ON users
 FOR EACH ROW
 BEGIN
-    SET NEW.valid_email = IF(IFNULL(OLD.email, "") != IFNULL(NEW.email, ""), NOT NEW.valid_email, NEW.valid_email);
+    SET NEW.valid_email = IF(IFNULL(OLD.email, "") != IFNULL(NEW.email, ""), NOT NEW.valid_email, OLD.valid_email);
 END $$
 DELIMITER ;
