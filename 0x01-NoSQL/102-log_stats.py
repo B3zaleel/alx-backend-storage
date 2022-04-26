@@ -26,7 +26,7 @@ def print_top_ips(server_collection):
     request_logs = server_collection.aggregate(
         [
             {
-                '$group': {'_id': "$ip", 'totalRequests': {'$count': {}}}
+                '$group': {'_id': "$ip", 'totalRequests': {'$sum': 1}}
             },
             {
                 '$sort': {'totalRequests': -1}
