@@ -2,7 +2,6 @@
 '''Task 12's module.
 '''
 from pymongo import MongoClient
-from pymongo.collection import Collection
 
 
 def print_nginx_request_logs(nginx_collection):
