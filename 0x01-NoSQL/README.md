@@ -15,7 +15,7 @@ This project contains tasks for learning to use the MongoDB NoSQL database appli
 + [x] 3. **All documents**<br/>[3-all](3-all) contains a MongoDB script that lists all documents in the collection `school`:
   + The database name will be passed as an option of `mongo` command.
 
-+ [ ] 4. **All matches**<br/>[4-match](4-match) contains a MongoDB script that lists all documents with `name="Holberton school"` in the collection `school`:
++ [x] 4. **All matches**<br/>[4-match](4-match) contains a MongoDB script that lists all documents with `name="Holberton school"` in the collection `school`:
   + The database name will be passed as an option of `mongo` command.
 
 + [ ] 5. **Count**<br/>[5-count](5-count) contains a MongoDB script that displays the number of documents in the collection `school`:
