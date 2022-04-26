@@ -39,7 +39,7 @@ This project contains tasks for learning to use the MongoDB NoSQL database appli
   + `mongo_collection` will be the `pymongo` collection object.
   + Returns the new `_id`.
 
-+ [ ] 10. **Change school topics**<br/>[10-update_topics.py](10-update_topics.py) contains a Python function that changes all topics of a school document based on the name:
++ [x] 10. **Change school topics**<br/>[10-update_topics.py](10-update_topics.py) contains a Python function that changes all topics of a school document based on the name:
   + Prototype: `def update_topics(mongo_collection, name, topics):`.
   + `mongo_collection` will be the `pymongo` collection object.
   + `name` (string) will be the school name to update.
