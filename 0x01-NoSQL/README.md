@@ -50,7 +50,7 @@ This project contains tasks for learning to use the MongoDB NoSQL database appli
   + `mongo_collection` will be the `pymongo` collection object.
   + `topic` (string) will be topic searched.
 
-+ [ ] 12. **Log stats**<br/>[12-log_stats.py](12-log_stats.py) contains a Python script that provides some stats about Nginx logs stored in MongoDB:
++ [x] 12. **Log stats**<br/>[12-log_stats.py](12-log_stats.py) contains a Python script that provides some stats about Nginx logs stored in MongoDB:
   + Database: `logs`.
   + Collection: `nginx`.
   + Display:
