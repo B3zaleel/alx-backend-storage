@@ -22,7 +22,6 @@ def print_nginx_request_logs(nginx_collection):
 def print_top_ips(server_collection):
     '''Prints statistics about the top 10 HTTP IPs in a collection.
     '''
-    print('IPs:')
     request_logs = server_collection.aggregate(
         [
             {
@@ -36,9 +35,13 @@ def print_top_ips(server_collection):
             },
         ]
     )
+    i = 0
     for request_log in request_logs:
+        i += 1
         ip = request_log['_id']
         ip_requests_count = request_log['totalRequests']
+        if i == 1:
+            print('IPs:')
         print('\t{}: {}'.format(ip, ip_requests_count))
 
 
