@@ -45,7 +45,7 @@ This project contains tasks for learning to use the MongoDB NoSQL database appli
   + `name` (string) will be the school name to update.
   + `topics` (list of strings) will be the list of topics approached in the school.
 
-+ [ ] 11. **Where can I learn Python?**<br/>[11-schools_by_topic.py](11-schools_by_topic.py) contains a Python function that returns the list of school having a specific topic:
++ [x] 11. **Where can I learn Python?**<br/>[11-schools_by_topic.py](11-schools_by_topic.py) contains a Python function that returns the list of school having a specific topic:
   + Prototype: `def schools_by_topic(mongo_collection, topic):`.
   + `mongo_collection` will be the `pymongo` collection object.
   + `topic` (string) will be topic searched.
