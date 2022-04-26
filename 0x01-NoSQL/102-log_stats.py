@@ -7,8 +7,6 @@ from pymongo import MongoClient
 def print_nginx_request_logs(nginx_collection):
     '''Prints stats about Nginx request logs.
     '''
-    if not nginx_collection:
-        return
     print('{} logs'.format(nginx_collection.count_documents({})))
     print('Methods:')
     methods = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
@@ -25,8 +23,6 @@ def print_top_ips(server_collection):
     '''Prints statistics about the top 10 HTTP IPs in a collection.
     '''
     print('IPs:')
-    if not server_collection:
-        return
     request_logs = server_collection.aggregate(
         [
             {
@@ -40,8 +36,6 @@ def print_top_ips(server_collection):
             },
         ]
     )
-    if not request_logs:
-        return
     for request_log in request_logs:
         ip = request_log['_id']
         ip_requests_count = request_log['totalRequests']
