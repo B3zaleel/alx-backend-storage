@@ -73,7 +73,7 @@ This project contains tasks for learning to use the MongoDB NoSQL database appli
       ```
   + You can use this dump as data sample: [dump.zip](dump.zip).
 
-+ [ ] 13. **Regex filter**<br/>[100-find](100-find) contains a MongoDB script that lists all documents with `name` starting by `Holberton` in the collection `school`:
++ [x] 13. **Regex filter**<br/>[100-find](100-find) contains a MongoDB script that lists all documents with `name` starting by `Holberton` in the collection `school`:
   + The database name will be passed as an option of the `mongo` command.
 
 + [ ] 14. **Top students**<br/>[101-students.py](101-students.py) contains a Python function that returns all students sorted by average score:
