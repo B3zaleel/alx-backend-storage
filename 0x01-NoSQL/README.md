@@ -26,7 +26,7 @@ This project contains tasks for learning to use the MongoDB NoSQL database appli
   + The update should add the attribute `address` with the value “972 Mission street”.
   + The database name will be passed as an option of `mongo` command.
 
-+ [ ] 7. **Delete by match**<br/>[7-delete](7-delete) contains a MongoDB script that deletes all documents with `name="Holberton school"` in the collection `school`:
++ [x] 7. **Delete by match**<br/>[7-delete](7-delete) contains a MongoDB script that deletes all documents with `name="Holberton school"` in the collection `school`:
   + The database name will be passed as an option of `mongo` command.
 
 + [ ] 8. **List all documents in Python**<br/>[8-all.py](8-all.py) contains a Python function that lists all documents in a collection:
