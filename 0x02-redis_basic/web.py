@@ -3,6 +3,7 @@
 '''
 import redis
 import requests
+from datetime import timedelta
 
 
 redis_store = redis.Redis()
@@ -20,6 +21,6 @@ def get_page(url: str) -> str:
     result = redis_store.get(res_key)
     if result is None:
         result = requests.get(url).content.decode('utf-8')
-        redis_store.setex(res_key, 10, result)
+        redis_store.setex(res_key, timedelta(seconds=10), result)
         return result
     return result.decode('utf-8')
