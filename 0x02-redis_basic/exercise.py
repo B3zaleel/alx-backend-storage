@@ -38,7 +38,7 @@ def call_history(method: Callable) -> Callable:
     return invoker
 
 
-def replay(fn : Callable) -> None:
+def replay(fn: Callable) -> None:
     '''Displays the call history of a Cache class' method.
     '''
     if fn is None or not hasattr(fn, '__self__'):
