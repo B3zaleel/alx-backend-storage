@@ -6,15 +6,11 @@ import requests
 from datetime import timedelta
 
 
-redis_store = redis.Redis()
-'''The local cache data storage.
-'''
-
-
 def get_page(url: str) -> str:
     '''Returns the content of a URL after caching the request's response,
     and tracking the request.
     '''
+    redis_store = redis.Redis()
     req_key = 'count:{}'.format(url)
     res_key = 'result:{}'.format(url)
     redis_store.incr(req_key)
