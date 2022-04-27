@@ -14,11 +14,11 @@ def get_page(url: str) -> str:
         return ''
     redis_store = redis.Redis()
     res_key = 'result:{}'.format(url)
+    req_key = 'count:{}'.format(url)
     result = redis_store.get(res_key)
     if result is not None:
+        redis_store.incr(req_key)
         return result
-    req_key = 'count:{}'.format(url)
     result = requests.get(url).content.decode('utf-8')
-    redis_store.incr(req_key)
     redis_store.setex(res_key, timedelta(seconds=10), result)
     return result
