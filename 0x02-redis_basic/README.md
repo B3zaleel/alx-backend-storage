@@ -49,7 +49,7 @@ This project contains tasks for learning to use the Redis NoSQL data storage app
   + Execute the wrapped function to retrieve the output. Store the output using `rpush` in the `"...:outputs"` list, then return the output.
   + Decorate `Cache.store` with `call_history`.
 
-+ [ ] 4. **Retrieving lists**<br/>[exercise.py](exercise.py) contains a Python script with the following updates to the previous task:
++ [x] 4. **Retrieving lists**<br/>[exercise.py](exercise.py) contains a Python script with the following updates to the previous task:
   + In this task, we will implement a `replay` function to display the history of calls of a particular function.
   + The output generated should look like this:
     ```py
