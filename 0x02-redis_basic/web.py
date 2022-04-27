@@ -10,6 +10,8 @@ def get_page(url: str) -> str:
     '''Returns the content of a URL after caching the request's response,
     and tracking the request.
     '''
+    if url is None or len(url.strip()) == 0:
+        return ''
     redis_store = redis.Redis()
     req_key = 'count:{}'.format(url)
     res_key = 'result:{}'.format(url)
