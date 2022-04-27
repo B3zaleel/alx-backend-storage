@@ -4,14 +4,14 @@
 import uuid
 import redis
 from functools import wraps
-from typing import Callable, Union
+from typing import Any, Callable, Union
 
 
 def count_calls(method: Callable) -> Callable:
     '''Tracks the number of calls made to a method in a Cache class.
     '''
     @wraps(method)
-    def invoker(*args):
+    def invoker(*args) -> Any:
         '''Invokes the given method after incrementing its call counter.
         '''
         redis_store = getattr(args[0] if len(args) > 0 else {}, '_redis', None)
@@ -28,7 +28,7 @@ def call_history(method: Callable) -> Callable:
     '''Tracks the call details of a method in a Cache class.
     '''
     @wraps(method)
-    def invoker(*args):
+    def invoker(*args) -> Any:
         '''Returns the method's output after storing its inputs and output.
         '''
         in_key = '{}:inputs'.format(method.__qualname__)
