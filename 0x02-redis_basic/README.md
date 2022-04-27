@@ -39,7 +39,7 @@ This project contains tasks for learning to use the Redis NoSQL data storage app
   + **Protip**: when defining a decorator it is useful to use `functool.wraps` to conserve the original function’s name, docstring, etc. Make sure you use it as described [here](https://docs.python.org/3.7/library/functools.html#functools.wraps).
   + Decorate `Cache.store` with `count_calls`.
 
-+ [ ] 3. **Storing lists**<br/>[exercise.py](exercise.py) contains a Python script with the following updates to the previous task:
++ [x] 3. **Storing lists**<br/>[exercise.py](exercise.py) contains a Python script with the following updates to the previous task:
   + Familiarize yourself with redis commands `RPUSH`, `LPUSH`, `LRANGE`, etc.
   + In this task, we will define a `call_history` decorator to store the history of inputs and outputs for a particular function.
   + Everytime the original function will be called, we will add its input parameters to one list in redis, and store its output into another list.
