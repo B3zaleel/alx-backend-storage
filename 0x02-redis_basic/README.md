@@ -9,7 +9,7 @@ This project contains tasks for learning to use the Redis NoSQL data storage app
   + Create a `store` method that takes a `data` argument and returns a string. The method should generate a random key (e.g. using `uuid`), store the input data in Redis using the random key and return the key.
   + Type-annotate `store` correctly. Remember that `data` can be a `str`, `bytes`, `int` or `float`.
 
-+ [ ] 1. **Reading from Redis and recovering original type**<br/>[exercise.py](exercise.py) contains a Python script with the following updates to the previous task:
++ [x] 1. **Reading from Redis and recovering original type**<br/>[exercise.py](exercise.py) contains a Python script with the following updates to the previous task:
   + Redis only allows to store string, bytes and numbers (and lists thereof). Whatever you store as single elements, it will be returned as a byte string. Hence if you store `"a"` as a UTF-8 string, it will be returned as `b"a"` when retrieved from the server.
   + In this exercise we will create a `get` method that take a `key` string argument and an optional `Callable` argument named `fn`. This callable will be used to convert the data back to the desired format.
   + Remember to conserve the original `Redis.get` behavior if the key does not exist.
