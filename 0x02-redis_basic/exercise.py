@@ -19,7 +19,7 @@ def count_calls(method: Callable) -> Callable:
             if redis_store.exists(method.__qualname__) == 0:
                 redis_store.set(method.__qualname__, 1)
             else:
-                redis_store.incr(method.__qualname__, 1)
+                redis_store.incrby(method.__qualname__, 1)
         return method(*args)
     return invoker
 
