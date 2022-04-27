@@ -11,13 +11,13 @@ def count_calls(method: Callable) -> Callable:
     '''Tracks the number of calls made to a method in a Cache class.
     '''
     @wraps(method)
-    def invoker(*args) -> Any:
+    def invoker(*args, **kwargs) -> Any:
         '''Invokes the given method after incrementing its call counter.
         '''
         redis_store = getattr(args[0] if len(args) > 0 else {}, '_redis', None)
         if isinstance(redis_store, redis.Redis):
             redis_store.incr(method.__qualname__)
-        return method(*args)
+        return method(*args, **kwargs)
     return invoker
 
 
@@ -25,7 +25,7 @@ def call_history(method: Callable) -> Callable:
     '''Tracks the call details of a method in a Cache class.
     '''
     @wraps(method)
-    def invoker(*args) -> Any:
+    def invoker(*args, **kwargs) -> Any:
         '''Returns the method's output after storing its inputs and output.
         '''
         in_key = '{}:inputs'.format(method.__qualname__)
@@ -33,7 +33,7 @@ def call_history(method: Callable) -> Callable:
         redis_store = getattr(args[0] if len(args) > 0 else {}, '_redis', None)
         if len(args) > 0 and isinstance(redis_store, redis.Redis):
             redis_store.rpush(in_key, str(args[1:]))
-        output = method(*args)
+        output = method(*args, **kwargs)
         if len(args) > 0 and isinstance(redis_store, redis.Redis):
             redis_store.rpush(out_key, output)
         return output
