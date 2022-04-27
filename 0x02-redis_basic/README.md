@@ -29,7 +29,7 @@ This project contains tasks for learning to use the Redis NoSQL data storage app
         assert cache.get(key, fn=fn) == value
     ```
 
-+ [ ] 2. **Incrementing values**<br/>[exercise.py](exercise.py) contains a Python script with the following updates to the previous task:
++ [x] 2. **Incrementing values**<br/>[exercise.py](exercise.py) contains a Python script with the following updates to the previous task:
   + Familiarize yourself with the `INCR` command and its python equivalent.
   + In this task, we will implement a system to count how many times methods of the `Cache` class are called.
   + Above `Cache` define a `count_calls` decorator that takes a single `method` `Callable` argument and returns a `Callable`.
