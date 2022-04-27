@@ -81,7 +81,6 @@ class Cache:
         self._redis.set(data_key, data)
         return data_key
 
-    @count_calls
     def get(
             self,
             key: str,
