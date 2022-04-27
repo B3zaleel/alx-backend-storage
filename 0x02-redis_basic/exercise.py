@@ -24,17 +24,16 @@ def call_history(method: Callable) -> Callable:
     '''Tracks the call details of a method in a Cache class.
     '''
     @wraps(method)
-    def invoker(*args, **kwargs) -> Any:
+    def invoker(self, *args, **kwargs) -> Any:
         '''Returns the method's output after storing its inputs and output.
         '''
         in_key = '{}:inputs'.format(method.__qualname__)
         out_key = '{}:outputs'.format(method.__qualname__)
-        redis_store = getattr(args[0] if len(args) > 0 else {}, '_redis', None)
-        if len(args) > 0 and isinstance(redis_store, redis.Redis):
-            redis_store.rpush(in_key, str(args[1:]))
-        output = method(*args, **kwargs)
-        if len(args) > 0 and isinstance(redis_store, redis.Redis):
-            redis_store.rpush(out_key, output)
+        if isinstance(self._redis, redis.Redis):
+            self._redis.rpush(in_key, str(args))
+        output = method(self, *args, **kwargs)
+        if isinstance(self._redis, redis.Redis):
+            self._redis.rpush(out_key, output)
         return output
     return invoker
 
