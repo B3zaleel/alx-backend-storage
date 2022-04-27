@@ -14,10 +14,12 @@ def count_calls(method: Callable) -> Callable:
     def invoker(*args):
         '''Invokes the given method after incrementing its call counter.
         '''
-        if args[0]._redis.exists(method.__qualname__) == 0:
-            args[0]._redis.set(method.__qualname__, 1)
-        else:
-            args[0]._redis.incr(method.__qualname__, 1)
+        redis_store = getattr(args[0] if len(args) > 0 else {}, '_redis', None)
+        if isinstance(redis_store, redis.Redis):
+            if redis_store.exists(method.__qualname__) == 0:
+                redis_store.set(method.__qualname__, 1)
+            else:
+                redis_store.incr(method.__qualname__, 1)
         return method(*args)
     return invoker
 
