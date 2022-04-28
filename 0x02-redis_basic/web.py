@@ -5,25 +5,28 @@ import redis
 import requests
 from functools import wraps
 from typing import Any, Callable
-from datetime import timedelta
+
+
+redis_store = redis.Redis()
+'''The module-level Redis instance.
+'''
 
 
 def data_cacher(method: Callable) -> Callable:
     '''Caches the output of fetched data.
     '''
     @wraps(method)
-    def invoker(*args, **kwargs) -> Any:
+    def invoker(url) -> str:
         '''The wrapper function for caching the output.
         '''
-        redis_store = redis.Redis()
-        res_key = 'result:{}'.format(','.join(args))
-        req_key = 'count:{}'.format(','.join(args))
-        result = redis_store.get(res_key)
+        res_key = f'result:{url}'
+        req_key = f'count:{url}'
         redis_store.incr(req_key)
+        result = redis_store.get(res_key)
         if result is not None:
             return result.decode('utf-8')
-        result = method(*args, **kwargs)
-        redis_store.setex(res_key, timedelta(seconds=10), result)
+        result = method(url)
+        redis_store.setex(res_key, 10, result)
         return result
     return invoker
 
