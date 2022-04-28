@@ -19,9 +19,9 @@ def data_cacher(method: Callable) -> Callable:
         res_key = 'result:{}'.format(','.join(args))
         req_key = 'count:{}'.format(','.join(args))
         result = redis_store.get(res_key)
+        redis_store.incr(req_key)
         if result is not None:
-            redis_store.incr(req_key)
-            return result
+            return result.decode('utf-8')
         result = method(*args, **kwargs)
         redis_store.setex(res_key, timedelta(seconds=10), result)
         return result
@@ -35,4 +35,4 @@ def get_page(url: str) -> str:
     '''
     if url is None or len(url.strip()) == 0:
         return ''
-    return requests.get(url).content.decode('utf-8')
+    return requests.get(url).text
