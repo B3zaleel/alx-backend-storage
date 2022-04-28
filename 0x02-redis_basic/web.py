@@ -35,4 +35,8 @@ def get_page(url: str) -> str:
     '''
     if url is None or len(url.strip()) == 0:
         return ''
-    return requests.get(url).content.decode('utf-8')
+    try:
+        return requests.get(url).content.decode('utf-8')
+    except Exception:
+        return ''
+
